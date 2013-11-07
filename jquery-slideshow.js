@@ -1,7 +1,8 @@
 +function($) {
     $.fn.extend({
-        slideshow: function() {
+        slideshow: function(delay) {
             var thisObj = this;
+            $(this).data("delay",delay);
 
             //init
             if (!$(this).data("inited")) {
@@ -60,7 +61,7 @@
                     var active = $(this).find(".slide.active");
                     $(this).find(".slide").eq((active.index() + 1) % length).trigger("show");
                 }).call(thisObj);
-            }, 5000);
+            }, $(this).data("delay"));
             $(this).data("timer", timer);
 
 
