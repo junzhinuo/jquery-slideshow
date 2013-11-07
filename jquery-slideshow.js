@@ -36,7 +36,7 @@
                 });
 
                 $(this).on("show", ".slide", function() {
-                    var active = $(thisObj).find(".slide.active]");
+                    var active = $(thisObj).find(".slide.active");
                     if (active[0] === this) {
                         return;
                     }
