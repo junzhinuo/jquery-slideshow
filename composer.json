@@ -15,6 +15,9 @@
         "component": {
             "scripts": [
                 "jquery-slideshow.js"
+            ],
+            "files": [
+                "*.css"
             ]
         }
     }
