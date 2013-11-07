@@ -1,0 +1,21 @@
+{
+    "name": "junzhinuo/jquery-slideshow",
+    "description": "",
+    "type": "component",
+    "authors": [
+        {
+            "name": "M",
+            "email": "532904597@qq.com"
+        }
+    ],
+    "require": {
+        "robloach/component-installer": "*"
+    },
+    "extra": {
+        "component": {
+            "scripts": [
+                "jquery-slideshow.js"
+            ]
+        }
+    }
+}
