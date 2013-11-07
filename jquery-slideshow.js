@@ -1,12 +1,24 @@
 +function($) {
     $.fn.extend({
-        slider: function() {
+        slideshow: function() {
             var thisObj = this;
 
             //init
             if (!$(this).data("inited")) {
+
+                if (!$(this).find(".buttons").length) {
+                    var buttons = $("<div class='buttons'></div>");
+                    for (var i = 0; i < $(this).find(".slide").length; i++) {
+                        buttons.append($("<span class='button'></span>"));
+                    }
+                    $(this).append(buttons);
+                }
+
+                $(this).find(".slide").eq(0).addClass("active");
+                $(this).find(".button").eq(0).addClass("active");
+
                 $(this).on("click", ".button", function() {
-                    $(thisObj).find(".slider").eq($(this).index()).trigger("show");
+                    $(thisObj).find(".slide").eq($(this).index()).trigger("show");
                 });
 
                 $(this).on("mouseenter", function() {
@@ -18,23 +30,23 @@
                 });
                 $(this).on("mouseleave", function() {
                     (function() {
-                        $(this).slider();
+                        $(this).slideshow();
                         $(this).removeClass("mouseover");
                     }).call(thisObj);
                 });
 
-                $(this).on("show", ".slider", function() {
-                    var active = $(thisObj).find(".slider[data-slider='active']");
-                    if (active[0] == this) {
+                $(this).on("show", ".slide", function() {
+                    var active = $(thisObj).find(".slide.active]");
+                    if (active[0] === this) {
                         return;
                     }
-                    active.fadeOut(500).removeAttr("data-slider").removeClass("active");
+                    active.fadeOut(500).removeClass("active");
                     $(thisObj).find(".button").removeClass("active");
-                    $(this).fadeIn(500).attr("data-slider", "active");
+                    $(this).fadeIn(500).addClass("active");
                     $(thisObj).find(".button").eq($(this).index()).addClass("active");
                 });
 
-                $(thisObj).find(".slider").eq(0).trigger("show");
+                $(thisObj).find(".slide").eq(0).trigger("show");
 
                 $(this).data("inited", true);
             }
@@ -44,9 +56,9 @@
             clearInterval(timer);
             timer = setInterval(function() {
                 (function() {
-                    var length = $(this).find(".slider").length;
-                    var active = $(this).find(".slider[data-slider='active']");
-                    $(this).find(".slider").eq((active.index() + 1) % length).trigger("show");
+                    var length = $(this).find(".slide").length;
+                    var active = $(this).find(".slide.active");
+                    $(this).find(".slide").eq((active.index() + 1) % length).trigger("show");
                 }).call(thisObj);
             }, 5000);
             $(this).data("timer", timer);
