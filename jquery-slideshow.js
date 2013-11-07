@@ -1,8 +1,8 @@
 +function($) {
     $.fn.extend({
         slideshow: function(delay) {
-            var thisObj = this;
-            $(this).data("delay",delay);
+            var thisObj = this;            
+            $(this).data("delay",delay||3000);
 
             //init
             if (!$(this).data("inited")) {
