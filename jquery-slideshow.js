@@ -15,9 +15,6 @@
                     $(this).append(buttons);
                 }
 
-                $(this).find(".slide").eq(0).addClass("active");
-                $(this).find(".button").eq(0).addClass("active");
-
                 $(this).on("click", ".button", function() {
                     $(thisObj).find(".slide").eq($(this).index()).trigger("show");
                 });
