@@ -5,8 +5,26 @@ slideshow
 
 Usage:
 
-<!-- in html -->
-<div id="slideshow" class="<!--[slideshow-buttons-center|slideshow-buttons-right]-->">
+composer.json
+
+``` json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/junzhinuo/jquery-slideshow.git"
+        }],
+    "require": {
+        "junzhinuo/jquery-slideshow": "dev-master"
+    }
+}
+```
+
+in html
+
+``` html
+
+<div id="slideshow" ><!--class="slideshow-buttons-center|slideshow-buttons-right"-->
     <div class="slides">
         <div class="slide"><!-- 1st slide -->
             <!-- contents here -->
@@ -28,11 +46,17 @@ Usage:
         <span class="button"></span>
     </div>
 </div>
+```
 
-<!-- in script -->
-$("#slideshow").slideshow();
+in script
 
-<!-- in stylesheet -->
+``` javascript
+$("#slideshow").slideshow(5000<!-- delay in ms, 300ms default -->);
+```
+
+in css
+
+``` css
 .slideshow{
     height: 300px;
     width: 400px;
@@ -46,3 +70,4 @@ $("#slideshow").slideshow();
 .slideshow .button.active{
     background: #00cccc;
 }
+```
