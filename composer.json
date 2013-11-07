@@ -17,7 +17,7 @@
             "scripts": [
                 "jquery-slideshow.js"
             ],
-            "files": [
+            "styles": [
                 "jquery-slideshow.css"
             ],
             "shim": {
