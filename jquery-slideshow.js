@@ -1,4 +1,4 @@
-(function($) {
++function($) {
     $.fn.extend({
         slider: function() {
             var thisObj = this;
@@ -54,5 +54,5 @@
 
         }
     });
-})(jQuery);
+}(jQuery);
 
