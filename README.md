@@ -10,12 +10,15 @@ Usage:
     <div class="slides">
         <div class="slide"><!-- 1st slide -->
             <!-- contents here -->
+            <h1>Slide 1</h1>
         </div>
         <div class="slide"><!-- 2nd slide -->
             <!-- contents here -->
+            <h1>Slide 2</h1>
         </div>
         <div class="slide"><!-- 3rd slide -->
             <!-- contents here -->
+            <h1>Slide 3</h1>
         </div>
         <!-- more slides -->
     </div>
