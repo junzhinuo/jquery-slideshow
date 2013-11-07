@@ -10,7 +10,7 @@
     ],
     "require": {
         "robloach/component-installer": "*",
-        "components/jquery": "*"
+        "components/jquery": ">=1.9"
     },
     "extra": {
         "component": {
@@ -18,8 +18,11 @@
                 "jquery-slideshow.js"
             ],
             "files": [
-                "*.css"
-            ]
+                "jquery-slideshow.css"
+            ],
+            "shim": {
+                "deps": ["jquery"]
+            }
         }
     }
 }
