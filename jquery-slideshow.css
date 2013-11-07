@@ -1,10 +1,13 @@
 .slideshow{
     position: relative;
-    overflow: hidden;
+    height: 400px;
+    width:600px;
+    background:#eee;
+
 }
 .slideshow .slide{
     display: none;
-    height: 500px;
+    height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
@@ -12,12 +15,12 @@
 }
 .slideshow .buttons{
     position: absolute;
-    right: 0px;
+    left: 0x;
     bottom:10px;
 }
 .slideshow .button{
     cursor:pointer;
-    margin-right: 20px;
+    margin-left: 20px;
     display: block;
     width: 24px;
     height: 24px;
@@ -30,4 +33,25 @@
 }
 .slideshow.mouseover .button{
     opacity: 0.9;
+}
+
+.slideshow.slideshow-buttons-right .buttons{
+    right: 0px;
+    bottom:10px;
+}
+.slideshow.slideshow-buttons-right .button{
+    margin-right: 20px;
+    margin-left:0;
+    float: left;
+}
+
+.slideshow.slideshow-buttons-center .buttons{
+    width:100%;
+    bottom:10px;
+    text-align: center;
+}
+.slideshow.slideshow-buttons-center .button{
+    margin: 10px;
+    display:inline-block;
+    float:none;
 }

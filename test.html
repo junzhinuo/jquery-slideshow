@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="jquery-slideshow.css" rel="stylesheet"/>
+        <script src="components/require-built.js"></script>
+        <script>
+            require(['jquery', 'jquery-slideshow'], function($) {
+                $("#slideshow").slideshow();
+            });
+        </script>
+        <style>
+            .slideshow{
+                height: 300px;
+                width:400px;
+                background:#ffccff;
+            }
+            .slideshow .button{
+                width: 50px;
+                height: 50px;
+                background: #ccffff;
+            }
+            .slideshow .button.active{
+                background: #00cccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="slideshow" class="slideshow-buttons-center">
+            <div class="slides">
+                <div class="slide"><!-- 1st slide -->
+                    <!-- contents here -->
+                    <h1>Slide 1</h1>
+                </div>
+                <div class="slide"><!-- 2nd slide -->
+                    <!-- contents here -->
+                    <h1>Slide 2</h1>
+                </div>
+                <div class="slide"><!-- 3rd slide -->
+                    <!-- contents here -->
+                    <h1>Slide 3</h1>
+                </div>
+                <!-- more slides -->
+            </div>
+            <!-- buttons div are optional -->
+<!--            <div class="buttons">
+                <span class="button">1</span>
+                <span class="button">2</span>
+                <span class="button">3</span>
+            </div>-->
+        </div>
+    </body>
+</html>
